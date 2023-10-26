@@ -7,10 +7,9 @@ using namespace std;
 //function prototypes
 bool isSortedIncreasing(int values[], int size);
 bool isSortedDecreasing(int values[], int size);
-/*
 bool hasAdjacentDuplicates(int values[], int size);
-bool hasDuplicates(int values[], int size);
-*/
+//bool hasDuplicates(int values[], int size);
+
 
 int main() {
 	const int CAPACITY = 6;
@@ -37,6 +36,13 @@ int main() {
 		cout << "The data is not decreasing. " << endl;
 	}
 
+	//adjacent dupes
+	if (hasAdjacentDuplicates(values, CAPACITY) == true) {
+		cout << "The data has adjacent duplicates. " << endl;
+	}
+	else {
+		cout << "The data does not have adjacent duplicates. " << endl;
+	}
 
 
 }
@@ -75,11 +81,23 @@ bool isSortedDecreasing(int values[], int size) {
 	return true;
 }
 
-/*
-bool hasAdjacentDuplicates(int values[], int size) {
 
+bool hasAdjacentDuplicates(int values[], int size) {
+	int prev = values[0];
+	bool aDupes = false;
+	for (int i = 1; i < 6; i++) {
+		if (values[i] == prev) {
+			aDupes = true;
+			return true;
+		}
+		else {
+			aDupes = false;
+		}
+	}
+	return false;
 }
 
+/*
 bool hasDuplicates(int values[], int size) {
 
 }
