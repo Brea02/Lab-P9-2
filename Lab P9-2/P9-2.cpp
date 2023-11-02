@@ -71,7 +71,7 @@ bool isSortedIncreasing(int values[], int size) {
 	return true;
 }
 
-
+ 
 bool isSortedDecreasing(int values[], int size) {
 	int highest = values[0];
 	bool decrease = true;
